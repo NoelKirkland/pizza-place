@@ -31,6 +31,16 @@ _{This is a detailed description of your application. Its purpose and usage.  Gi
 
 _{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this app depends on?}_
 
+## Specifications:
+
+| User action: 	| Input: 	| Output: 	|
+|-	|:-:	|:-:	|
+| User selects their preferred pizza size 	| "small" 	| "" 	|
+| User selects their preferred toppings 	| "pepperoni" 	| "" 	|
+| User selects their crust preference 	| "thin crust" 	| "" 	|
+| User selects an "See order" button which returns the specifications of their order as well as a calculated price 	| _presses_ See order 	| "You have ordered a small, thin crust pizza with pepperoni on top. Your total is $16.75" 	|
+| Once user selects the "See order" button another button will also display labeled "Oder your pizza". Once selected the user will see a confirmation screen 	| _presses_ Oder your pizza 	| "Your pizza is being made and will be on it's way shortly!" 	|
+
 ## Known Bugs
 
 _{Are there issues that have not yet been resolved that you want to let users know you know?  Outline any issues that would impact use of your application.  Share any workarounds that are in place. }_
