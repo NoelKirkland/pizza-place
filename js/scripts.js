@@ -5,26 +5,24 @@ function Pizza(size, crust, topping, price){
   this.topping = topping;
   this.price = price
 }
-Pizza.prototype.pizzaCost = function(){
-  return this.price[0] + this.price[1] + this.price[2] + this.price[3];
-}
+
 Pizza.prototype.fullOrder = function() {
-  return "You have selected a " + this.size + ", " + this.crust + " pizza with " + this.topping + " on top. Your total is $" + this.price;
+  return "You have selected a " + this.size + ", " + this.crust + " pizza with " + this.topping + " on top. Your total is $" + (this.price[0] + this.price[1] + this.price[2] + this.price[3]);
 }
 
-// function priceIncrementor (additionalCost){
-//   return totalPrice += additionalCost;
-// }
-
+//Collects user's pizza specifications and their coresponding prices then pushes them into an array
 function priceIncrementor (additionalCost){
   return totalPriceArray.push(additionalCost);
 }
 
-let totalPrice = 10.00;
 
-totalPriceArray = [totalPrice];
 // User Interface:
 $(document).ready(function(){
+//Base price for a pizza
+  const basePrice = 10.00;
+
+//The array that our pizza specifications and their corresponding prices are being pushed to. Notice our pizza's base price has already been added
+  let totalPriceArray = [basePrice];
   $("form#pizz-specs").submit(function(event){
     event.preventDefault();
     const inputSize = $("#pizza-size").val();
@@ -34,24 +32,24 @@ $(document).ready(function(){
     const inputTopping = $("#pizza-topping").val();
       console.log(inputTopping);
 
-// Pizza specification prices:
+// Pizza specification prices
+//Size variable:
+    const small = 0.00
+    const medium = 3.50
+    const large = 6.25
 
-  //Size variable:
-  const small = 0.00
-  const medium = 3.50
-  const large = 6.25
+    //Crust variable:
+    const normal = 0.00
+    const thin = 1.00
+    const cheesy = 2.25
 
-  //Crust variable:
-  const normal = 0.00
-  const thin = 1.00
-  const cheesy = 2.25
+    //Topping variable:
+    const cheese = 0.00
+    const pepperoni = 2.75
+    const vegi = 2.00
 
-  //Topping variable:
-  const cheese = 0.00
-  const pepperoni = 2.75
-  const vegi = 2.00
-
-//Switch case for pizza size
+//Switch cases to convert our user inputted pizza specifications into their equivelent price values
+//Switch case for pizza size:
     switch (inputSize) {
       case ("Small"):
         priceIncrementor(small);
@@ -64,7 +62,7 @@ $(document).ready(function(){
         break;
     }
 
-    //Switch case for pizza crust
+//Switch case for pizza crust:
     switch (inputCrust) {
       case ("Normal"):
         priceIncrementor(normal);
@@ -77,7 +75,7 @@ $(document).ready(function(){
         break;
     }
 
-    //Switch case for pizza topping
+//Switch case for pizza topping:
     switch (inputTopping) {
       case ("Cheese"):
         priceIncrementor(cheese);
@@ -89,27 +87,13 @@ $(document).ready(function(){
         priceIncrementor(vegi);
         break;
     }
-    console.log(totalPriceArray);
 
-    // let totalPriceArray = totalPriceArray.push(totalPrice);
-
-    let test2 = newOrder.pizzaCost();
-    console.log(test2);
-    
-    let newOrder = new Pizza (inputSize, inputCrust, inputTopping, test2)
+//Pizza order object that is created using our object construction function
+    let newOrder = new Pizza (inputSize, inputCrust, inputTopping, totalPriceArray)
     console.log(newOrder);
-
-
-    let test1 = newOrder.fullOrder();
-    console.log(test1);
-
-
-    // new commit comment needed
+    
+//Pizza order object that displays all object key values encased in text plus, the calculated value of the pizza's price
+    let fullOrder = newOrder.fullOrder();
+    console.log(fullOrder);
   });
 });
-
-
-
-
-// Example object for reference:
-// let pizzaOrder1 = new Pizza("small","thin crust","pepperoni","15.75");
