@@ -6,9 +6,7 @@ function Pizza(size, crust, topping, price){
   this.price = price
 }
 Pizza.prototype.pizzaCost = function(){
-  return this.price.forEach(function(element){
-    totalPrice += element
-  })
+  return this.price[0] + this.price[1] + this.price[2] + this.price[3];
 }
 Pizza.prototype.fullOrder = function() {
   return "You have selected a " + this.size + ", " + this.crust + " pizza with " + this.topping + " on top. Your total is $" + this.price;
@@ -24,7 +22,7 @@ function priceIncrementor (additionalCost){
 
 let totalPrice = 10.00;
 
-totalPriceArray = [];
+totalPriceArray = [totalPrice];
 // User Interface:
 $(document).ready(function(){
   $("form#pizz-specs").submit(function(event){
@@ -93,14 +91,18 @@ $(document).ready(function(){
     }
     console.log(totalPriceArray);
 
-    let newOrder = new Pizza (inputSize, inputCrust, inputTopping, totalPrice)
+    // let totalPriceArray = totalPriceArray.push(totalPrice);
+
+    let test2 = newOrder.pizzaCost();
+    console.log(test2);
+    
+    let newOrder = new Pizza (inputSize, inputCrust, inputTopping, test2)
     console.log(newOrder);
+
 
     let test1 = newOrder.fullOrder();
     console.log(test1);
 
-    let test2 = newOrder.pizzaCost();
-    console.log(test2);
 
     // new commit comment needed
   });
