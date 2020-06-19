@@ -5,7 +5,9 @@ function Pizza(size, crust, topping, price){
   this.topping = topping;
   this.price = price
 }
-
+Pizza.prototype.pizzaCost = function(){
+  return
+}
 Pizza.prototype.fullOrder = function() {
   return "You have selected a " + this.size + ", " + this.crust + " pizza with " + this.topping + " on top. Your total is $" + this.price;
 }
@@ -27,21 +29,20 @@ $(document).ready(function(){
       console.log(inputCrust);
     const inputTopping = $("#pizza-topping").val();
       console.log(inputTopping);
-    let calculatedPrice = 10.00
 
 // Pizza specification prices:
 
-  //var1:
+  //Size variable:
   const small = 0.00
   const medium = 3.50
   const large = 6.25
 
-  //var2:
+  //Crust variable:
   const normal = 0.00
   const thin = 1.00
   const cheesy = 2.25
 
-  //var3:
+  //Topping variable:
   const cheese = 0.00
   const pepperoni = 2.75
   const vegi = 2.00
@@ -88,6 +89,11 @@ $(document).ready(function(){
 
     let newOrder = new Pizza (inputSize, inputCrust, inputTopping, totalPrice)
     console.log(newOrder);
+
+    let test = newOrder.fullOrder();
+    console.log(test);
+
+    // new commit comment needed
   });
 });
 
