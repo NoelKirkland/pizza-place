@@ -10,6 +10,10 @@ Pizza.prototype.fullOrder = function() {
   return "You have selected a " + this.size + ", " + this.crust + " pizza with " + this.topping + " on top. Your total is $" + this.price;
 }
 
+function priceIncrementer (additionalCost){
+  return price + additionalCost;
+}
+
 
 
 // User Interface:
@@ -22,8 +26,11 @@ $(document).ready(function(){
       console.log(inputCrust);
     const inputTopping = $("#pizza-topping").val();
       console.log(inputTopping);
+    let calculatedPrice = 10.00
     let newOrder = new Pizza (inputSize, inputCrust, inputTopping)
     console.log(newOrder);
+
+    if (inputSize === "Small" && inputCrust === "Normal" && inputTopping === "Cheese")
   });
 });
 
