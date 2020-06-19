@@ -13,5 +13,22 @@ Pizza.prototype.fullOrder = function() {
 
 
 // User Interface:
+$(document).ready(function(){
+  $("form#pizz-specs").submit(function(event){
+    event.preventDefault();
+    const inputSize = $("#pizza-size").val();
+      console.log(inputSize);
+    const inputCrust = $("#pizza-crust").val();
+      console.log(inputCrust);
+    const inputTopping = $("#pizza-topping").val();
+      console.log(inputTopping);
+    let newOrder = new Pizza (inputSize, inputCrust, inputTopping)
+    console.log(newOrder);
+  });
+});
 
-let pizzaOrder1 = new Pizza("small","thin crust","pepperoni","15.75");
+
+
+
+// Example object for reference:
+// let pizzaOrder1 = new Pizza("small","thin crust","pepperoni","15.75");

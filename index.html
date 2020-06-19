@@ -11,7 +11,34 @@
   </head>
   <body>
     <div class="container">
+      <h1>Order your pizza!</h1>
+      <form id="pizz-specs">
+        <label for="pizza-size">Which size pizza would you like:</label>
+        <select class="form-control" id="pizza-size">
+          <option></option>
+          <option>Small</option>
+          <option>Medium</option>
+          <option>Large</option>
+        </select>
 
+        <label for="pizza-crust">What type of crust would you like on your pizza:</label>
+        <select class="form-control" id="pizza-crust">
+          <option></option>
+          <option>Normal</option>
+          <option>Thin</option>
+          <option>Cheesy</option>
+        </select>
+
+        <label for="pizza-topping">Which toppings would you like on your pizza:</label>
+        <select class="form-control" id="pizza-topping">
+          <option></option>
+          <option>Pepperoni</option>
+          <option>Sausage</option>
+          <option>Vegi</option>
+        </select>
+        
+        <button type="submit" class="btn">Submit</button>
+      </form>
     </div>
   </body>
 </html>
