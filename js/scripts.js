@@ -11,14 +11,10 @@ Pizza.prototype.fullOrder = function() {
 }
 
 function priceIncrementor (additionalCost){
-  return price += additionalCost;
+  return totalPrice += additionalCost;
 }
 
-function priceIncrementorTest (var1, var2, var3){
-  return price += (var1 + var2 + var3);
-}
-
-
+let totalPrice = 10.00
 
 
 // User Interface:
@@ -35,9 +31,6 @@ $(document).ready(function(){
 
 // Pizza specification prices:
 
-//base price:
-let price = 10.00
-
   //var1:
   const small = 0.00
   const medium = 3.50
@@ -53,11 +46,48 @@ let price = 10.00
   const pepperoni = 2.75
   const vegi = 2.00
 
-  let totalPrice = priceIncrementorTest(inputSize, inputCrust, inputTopping)
-  console.log(totalPrice);
+//Switch case for pizza size
+    switch (inputSize) {
+      case ("Small"):
+        priceIncrementor(small);
+        break;
+      case ("Medium"):
+        priceIncrementor(medium);
+        break;
+      case ("Large"):
+        priceIncrementor(large);
+        break;
+    }
 
-  let newOrder = new Pizza (inputSize, inputCrust, inputTopping, totalPrice)
-  console.log(newOrder);
+    //Switch case for pizza crust
+    switch (inputCrust) {
+      case ("Normal"):
+        priceIncrementor(normal);
+        break;
+      case ("Thin"):
+        priceIncrementor(thin);
+        break;
+      case ("Cheesy"):
+        priceIncrementor(cheesy);
+        break;
+    }
+
+    //Switch case for pizza topping
+    switch (inputTopping) {
+      case ("Cheese"):
+        priceIncrementor(cheese);
+        break;
+      case ("Pepperoni"):
+        priceIncrementor(pepperoni);
+        break;
+      case ("Vegi"):
+        priceIncrementor(vegi);
+        break;
+    }
+    console.log(totalPrice);
+
+    let newOrder = new Pizza (inputSize, inputCrust, inputTopping, totalPrice)
+    console.log(newOrder);
   });
 });
 
