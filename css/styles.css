@@ -5,3 +5,11 @@
 #order-submitted {
   display: none;
 }
+
+.btn-submit {
+  margin: 20px;
+}
+
+.btn-order {
+  margin-left: 20px;
+}

@@ -11,40 +11,42 @@
   </head>
   <body>
     <div class="container">
-      <h1>Order your pizza!</h1>
-      <form id="pizz-specs">
-        <label for="pizza-size">Which size pizza would you like:</label>
-        <select class="form-control" id="pizza-size">
-          <option></option>
-          <option>Small</option>
-          <option>Medium</option>
-          <option>large</option>
-        </select>
+      <div class="jumbotron">
+        <h1>Order your pizza!</h1>
+        <form id="pizza-specs">
+          <label for="pizza-size">Which size pizza would you like:</label>
+          <select class="form-control" id="pizza-size">
+            <option></option>
+            <option>Small</option>
+            <option>Medium</option>
+            <option>large</option>
+          </select>
 
-        <label for="pizza-crust">What type of crust would you like on your pizza:</label>
-        <select class="form-control" id="pizza-crust">
-          <option></option>
-          <option>Normal</option>
-          <option>Thin</option>
-          <option>cheesy</option>
-        </select>
+          <label for="pizza-crust">What type of crust would you like on your pizza:</label>
+          <select class="form-control" id="pizza-crust">
+            <option></option>
+            <option>Normal</option>
+            <option>Thin</option>
+            <option>cheesy</option>
+          </select>
 
-        <label for="pizza-topping">Which toppings would you like on your pizza:</label>
-        <select class="form-control" id="pizza-topping">
-          <option></option>
-          <option>Cheese</option>
-          <option>Pepperoni</option>
-          <option>vegi</option>
-        </select>
+          <label for="pizza-topping">Which toppings would you like on your pizza:</label>
+          <select class="form-control" id="pizza-topping">
+            <option></option>
+            <option>Cheese</option>
+            <option>Pepperoni</option>
+            <option>vegi</option>
+          </select>
 
-        <button type="submit" class="btn-submit">Submit</button>
-      </form>
-      <div id=order-output>
-        <p><span id="full-order"></span></p>
-        <span class="clickable" id="hide-order-output"><button type="submit" class="btn-order">Place Order</button></span>
-      </div>
-      <div id="order-submitted">
-        <p>Your order has been sucessfully placed!</p>
+          <button type="submit" class="btn-submit">Submit</button>
+        </form>
+        <div id=order-output>
+          <p><span id="full-order"></span></p>
+          <span class="clickable" id="hide-order-output"><button type="submit" class="btn-order">Place Order</button></span>
+        </div>
+        <div id="order-submitted">
+          <p>Your order has been successfully placed!</p>
+        </div>
       </div>
     </div>
   </body>
