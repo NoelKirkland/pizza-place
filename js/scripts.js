@@ -1,4 +1,4 @@
-// ***Buisiness Logic***
+// ***Business Logic***
 function Pizza(size, crust, topping, price){
   this.size = size;
   this.crust = crust;
@@ -46,7 +46,7 @@ $(document).ready(function(){
     const pepperoni = 2.75
     const vegi = 2.00
 
-// Switch cases to convert our user inputted pizza specifications into their equivelent price values
+// Switch cases to convert our user inputted pizza specifications into their equivalent price values
 // Switch case for pizza size:
     switch (inputSize) {
       case ("Small"):
