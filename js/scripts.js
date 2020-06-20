@@ -15,22 +15,19 @@ function priceIncrementor (additionalCost){
   return totalPriceArray.push(additionalCost);
 }
 
-
-// User Interface:
-$(document).ready(function(){
 //Base price for a pizza
-  const basePrice = 10.00;
+const basePrice = 10.00;
 
 //The array that our pizza specifications and their corresponding prices are being pushed to. Notice our pizza's base price has already been added
   let totalPriceArray = [basePrice];
+
+// User Interface:
+$(document).ready(function(){
   $("form#pizz-specs").submit(function(event){
     event.preventDefault();
     const inputSize = $("#pizza-size").val();
-      console.log(inputSize);
     const inputCrust = $("#pizza-crust").val();
-      console.log(inputCrust);
     const inputTopping = $("#pizza-topping").val();
-      console.log(inputTopping);
 
 // Pizza specification prices
 //Size variable:
@@ -90,10 +87,16 @@ $(document).ready(function(){
 
 //Pizza order object that is created using our object construction function
     let newOrder = new Pizza (inputSize, inputCrust, inputTopping, totalPriceArray)
-    console.log(newOrder);
     
 //Pizza order object that displays all object key values encased in text plus, the calculated value of the pizza's price
     let fullOrder = newOrder.fullOrder();
-    console.log(fullOrder);
+
+    $("#full-order").text(fullOrder)
+    $("#order-output").show();
+
+    $("#hide-order-output").click(function(){
+      $("#order-output").hide();
+      $("#order-submitted").show();
+    });
   });
 });
